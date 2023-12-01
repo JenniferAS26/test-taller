@@ -32,7 +32,7 @@ const Router = () => {
   return (
     <AppContext.Provider value={globalState}>
       <ChakraProvider>
-        <BrowserRouter>
+        <BrowserRouter basename="/">
           <Routes>
             <Route element={<Layout />}>
               <Route
@@ -40,7 +40,7 @@ const Router = () => {
                   <PublicRoutes isAuthenticate={userLogged.isAuthenticated} />
                 }
               >
-                <Route index path="/" element={<MiComponente />} />
+                <Route index element={<MiComponente />} />
                 <Route path="/login" element={<Login />} />
                 <Route path="/micomponente" element={<MiComponente />} />
                 <Route path="/micontador" element={<MiContador />} />
